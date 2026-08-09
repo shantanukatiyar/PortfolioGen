@@ -1,0 +1,1413 @@
+/* =========================================================
+   PORTFOLIOGEN — RESUME BUILDER
+   BLACK / WHITE / GREY THEME
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #111111;
+  --black-soft: #1b1b1b;
+  --dark: #222222;
+
+  --text: #2b2b2b;
+  --muted: #6b6b6b;
+  --light-text: #8a8a8a;
+
+  --white: #ffffff;
+  --off-white: #f7f7f7;
+  --light-grey: #f1f1f1;
+  --grey: #e5e5e5;
+  --border: #d8d8d8;
+
+  --danger: #b42318;
+  --danger-bg: #fff4f2;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(0, 0, 0, 0.035),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(0, 0, 0, 0.03),
+      transparent 30%
+    ),
+    #f7f7f7;
+
+  color: var(--text);
+
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  min-height: 72px;
+
+  background: var(--black);
+
+  padding: 0 6%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid #2c2c2c;
+}
+
+.logo {
+  text-decoration: none;
+
+  color: #ffffff;
+
+  font-size: 1.45rem;
+
+  font-weight: 750;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.logo span {
+  color: #bdbdbd;
+}
+
+
+/* =========================================================
+   NAV ACTIONS
+   ========================================================= */
+
+.nav-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.download-btn,
+.nav-create-btn,
+.add-btn,
+.remove-btn {
+  border: 0;
+
+  cursor: pointer;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   NAV BUTTONS
+   ========================================================= */
+
+.download-btn,
+.nav-create-btn {
+  background: #ffffff;
+
+  color: #111111;
+
+  border-radius: 8px;
+
+  padding: 11px 18px;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.download-btn:hover,
+.nav-create-btn:hover {
+  background: #dddddd;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MAIN APP LAYOUT
+   ========================================================= */
+
+.app-layout {
+  max-width: 1500px;
+
+  margin: auto;
+
+  padding: 34px 5% 70px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(440px, 1fr)
+    minmax(500px, 0.95fr);
+
+  gap: 34px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.form-panel,
+.preview-panel {
+  border-radius: 16px;
+
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.07);
+}
+
+.form-panel {
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+
+  padding: 30px;
+}
+
+.preview-panel {
+  background:
+    linear-gradient(
+      145deg,
+      #eeeeee,
+      #f8f8f8
+    );
+
+  border: 1px solid #d5d5d5;
+
+  padding: 20px;
+
+  position: sticky;
+
+  top: 20px;
+}
+
+
+/* =========================================================
+   FORM HEADING
+   ========================================================= */
+
+.form-heading p,
+.preview-label,
+.hero-tag,
+.section-heading > p,
+.cta-section p {
+  color: #555555;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 1.2px;
+
+  font-weight: 800;
+}
+
+.form-heading h1 {
+  margin: 9px 0 8px;
+
+  font-size: 2rem;
+
+  color: var(--black);
+}
+
+.form-heading span {
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+   ========================================================= */
+
+.form-section {
+  border-top: 1px solid var(--grey);
+
+  margin-top: 28px;
+
+  padding-top: 24px;
+}
+
+.form-section h2 {
+  color: var(--black);
+
+  margin-bottom: 17px;
+
+  font-size: 1.05rem;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  font-size: 0.82rem;
+
+  font-weight: 650;
+
+  color: #3d3d3d;
+
+  margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+textarea {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  border: 1px solid #cfcfcf;
+
+  border-radius: 7px;
+
+  font: inherit;
+
+  background: #fafafa;
+
+  color: #222222;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999999;
+}
+
+textarea {
+  resize: vertical;
+
+  min-height: 90px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+
+  border-color: #555555;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 0, 0, 0.08);
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   DYNAMIC CARDS
+   ========================================================= */
+
+.dynamic-card {
+  border: 1px solid #dddddd;
+
+  background: #f8f8f8;
+
+  padding: 17px;
+
+  border-radius: 10px;
+
+  margin-bottom: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.dynamic-card:hover {
+  border-color: #bdbdbd;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   REMOVE BUTTON
+   ========================================================= */
+
+.remove-btn {
+  background: var(--danger-bg);
+
+  color: var(--danger);
+
+  border: 1px solid #efc5c0;
+
+  padding: 6px 10px;
+
+  border-radius: 6px;
+
+  font-size: 0.72rem;
+
+  margin-bottom: 13px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #ffe8e5;
+
+  border-color: #dfaaa4;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+   ========================================================= */
+
+.add-btn {
+  width: 100%;
+
+  padding: 11px;
+
+  background: #f1f1f1;
+
+  color: #222222;
+
+  border: 1px dashed #999999;
+
+  border-radius: 7px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-btn:hover {
+  background: #e7e7e7;
+
+  border-color: #555555;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESUME PREVIEW
+   ATS-FRIENDLY CLASSIC RESUME
+   ========================================================= */
+
+.resume-paper {
+  background: #ffffff;
+
+  color: #000000;
+
+  min-height: 900px;
+
+  padding: 42px 44px;
+
+  border-radius: 0;
+
+  box-shadow:
+    0 10px 24px rgba(16, 24, 40, 0.18);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 12px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: 1.25;
+
+  transform: none !important;
+}
+
+.resume-paper,
+.resume-paper * {
+  color: #000000;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  transform: none !important;
+}
+
+
+/* =========================================================
+   RESUME HEADER
+   ========================================================= */
+
+.resume-header {
+  text-align: center;
+
+  border-bottom: 1px solid #999999;
+
+  padding-bottom: 12px;
+}
+
+.resume-header h1 {
+  font-size: 25px;
+
+  font-weight: 700;
+
+  letter-spacing: 0;
+
+  text-transform: none;
+
+  line-height: 1.1;
+}
+
+.resume-header > p {
+  font-size: 12px;
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  margin-top: 3px;
+}
+
+
+/* =========================================================
+   CONTACT LINE
+   ========================================================= */
+
+.contact-line {
+  margin-top: 6px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 0;
+
+  font-size: 10px;
+
+  line-height: 1.2;
+}
+
+.contact-line span,
+.contact-line a {
+  display: inline-flex;
+
+  align-items: center;
+}
+
+.contact-line span:not(:last-of-type)::after,
+.contact-line a:not(:last-child)::after {
+  content: "|";
+
+  margin: 0 7px;
+
+  color: #000000;
+}
+
+
+/* =========================================================
+   RESUME LINKS
+   ========================================================= */
+
+.resume-paper a,
+.resume-paper a:visited,
+.resume-paper a:hover,
+.resume-paper a:active {
+  color: #000000 !important;
+
+  text-decoration: none !important;
+}
+
+
+/* =========================================================
+   RESUME SECTIONS
+   ========================================================= */
+
+.resume-section {
+  margin-top: 14px;
+}
+
+.section-heading-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid #000000;
+
+  margin-bottom: 5px;
+
+  padding-bottom: 2px;
+}
+
+.section-heading-row h2 {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  padding: 0;
+
+  margin: 0;
+
+  border: 0;
+
+  flex: 1;
+}
+
+
+/* =========================================================
+   SECTION MOVE BUTTONS
+   ========================================================= */
+
+.section-move-buttons {
+  display: flex;
+
+  gap: 4px;
+
+  margin-bottom: 0;
+}
+
+.move-up-btn,
+.move-down-btn {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif !important;
+
+  width: 22px;
+
+  height: 22px;
+
+  border: 1px solid #c9c9c9;
+
+  border-radius: 4px;
+
+  background: #f4f4f4;
+
+  color: #222222 !important;
+
+  cursor: pointer;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.move-up-btn:hover,
+.move-down-btn:hover {
+  background: #dddddd;
+
+  border-color: #888888;
+}
+
+
+/* =========================================================
+   RESUME TEXT
+   ========================================================= */
+
+.resume-section p {
+  text-align: left;
+
+  margin: 0;
+
+  font-style: normal;
+}
+
+
+/* =========================================================
+   RESUME ITEMS
+   ========================================================= */
+
+.education-item,
+.project-item,
+.experience-item,
+.certification-item {
+  margin-bottom: 8px;
+
+  font-style: normal;
+}
+
+.item-title-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.item-title-row strong {
+  font-weight: 700;
+
+  font-style: normal;
+}
+
+.item-subtitle {
+  margin-top: 1px;
+
+  font-style: italic;
+
+  line-height: 1.2;
+}
+
+.project-item .item-subtitle,
+.experience-item .item-subtitle,
+.certification-item .item-subtitle {
+  font-style: normal;
+}
+
+
+/* =========================================================
+   PROJECT / CERTIFICATE LINKS
+   ========================================================= */
+
+.item-links {
+  display: inline-flex;
+
+  gap: 7px;
+
+  margin-left: 8px;
+
+  font-weight: 400;
+
+  font-style: italic;
+}
+
+.item-links a {
+  text-decoration: none !important;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skill-row {
+  margin-bottom: 2px;
+
+  line-height: 1.2;
+}
+
+.skill-row strong {
+  display: inline;
+
+  min-width: 0;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   EMPTY PREVIEW
+   ========================================================= */
+
+.empty-note {
+  color: #000000 !important;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   LANDING PAGE
+   ========================================================= */
+
+.landing-main {
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding: 64px 6% 40px;
+}
+
+.hero-section {
+  min-height: 570px;
+
+  display: grid;
+
+  grid-template-columns: 1.05fr 0.95fr;
+
+  gap: 60px;
+
+  align-items: center;
+}
+
+.hero-content h1 {
+  margin: 15px 0 18px;
+
+  color: var(--black);
+
+  font-size:
+    clamp(
+      2.6rem,
+      5vw,
+      4.5rem
+    );
+
+  line-height: 1.08;
+}
+
+.hero-description {
+  color: #626262;
+
+  font-size: 1.05rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+  display: flex;
+
+  gap: 13px;
+
+  margin-top: 30px;
+}
+
+.hero-primary-btn,
+.hero-secondary-btn {
+  text-decoration: none;
+
+  padding: 13px 20px;
+
+  border-radius: 8px;
+
+  font-size: 0.92rem;
+
+  font-weight: 750;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.hero-primary-btn {
+  background: #111111;
+
+  color: #ffffff;
+}
+
+.hero-primary-btn:hover {
+  background: #2b2b2b;
+
+  transform: translateY(-2px);
+}
+
+.hero-secondary-btn {
+  color: #222222;
+
+  background: #ffffff;
+
+  border: 1px solid #cfcfcf;
+}
+
+.hero-secondary-btn:hover {
+  border-color: #777777;
+
+  background: #f5f5f5;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO POINTS
+   ========================================================= */
+
+.hero-points {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px 18px;
+
+  margin-top: 25px;
+
+  color: #5d5d5d;
+
+  font-size: 0.86rem;
+}
+
+
+/* =========================================================
+   HERO PREVIEW
+   ========================================================= */
+
+.hero-preview-wrap {
+  position: relative;
+
+  padding: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e5e5e5,
+      #f8f8f8
+    );
+
+  border-radius: 20px;
+}
+
+.mini-resume {
+  background: #ffffff;
+
+  min-height: 450px;
+
+  padding: 34px;
+
+  border-radius: 5px;
+
+  color: #111111;
+}
+
+.mini-header {
+  text-align: center;
+
+  border-bottom: 2px solid #222222;
+
+  padding-bottom: 12px;
+}
+
+.mini-header h2 {
+  font-size: 1.45rem;
+}
+
+.mini-header p {
+  margin: 5px 0;
+
+  font-size: 0.86rem;
+}
+
+.mini-header span,
+.mini-section p {
+  font-size: 0.7rem;
+}
+
+.mini-section {
+  margin-top: 18px;
+}
+
+.mini-section h3 {
+  border-bottom: 1px solid #222222;
+
+  padding-bottom: 3px;
+
+  margin-bottom: 6px;
+
+  font-size: 0.72rem;
+}
+
+.mini-section strong {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 0.76rem;
+}
+
+
+/* =========================================================
+   PREVIEW BADGE
+   ========================================================= */
+
+.preview-badge {
+  position: absolute;
+
+  right: -18px;
+
+  bottom: 30px;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  padding: 10px 14px;
+
+  border-radius: 8px;
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.features-section {
+  padding: 90px 0 70px;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  margin-top: 10px;
+
+  color: var(--black);
+
+  font-size: 2rem;
+}
+
+.features-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+.feature-card {
+  background: #ffffff;
+
+  border: 1px solid #dedede;
+
+  border-radius: 14px;
+
+  padding: 23px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #999999;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature-number {
+  color: #555555;
+
+  font-weight: 800;
+
+  margin-bottom: 22px;
+}
+
+.feature-card h3 {
+  color: var(--black);
+
+  margin-bottom: 9px;
+}
+
+.feature-card p {
+  color: var(--muted);
+
+  font-size: 0.86rem;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   CTA SECTION
+   ========================================================= */
+
+.cta-section {
+  background: #111111;
+
+  border: 1px solid #222222;
+
+  border-radius: 18px;
+
+  padding: 30px 46px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #ffffff;
+
+  margin: 70px 0 50px;
+
+  gap: 30px;
+}
+
+.cta-section p {
+  color: #bdbdbd;
+}
+
+.cta-section h2 {
+  margin-top: 8px;
+
+  font-size: 1.8rem;
+
+  color: #ffffff;
+}
+
+.cta-section .hero-primary-btn {
+  background: #ffffff;
+
+  color: #111111;
+
+  white-space: nowrap;
+}
+
+.cta-section .hero-primary-btn:hover {
+  background: #dddddd;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  border-top: 1px solid #dddddd;
+
+  padding: 24px 6%;
+
+  text-align: center;
+
+  color: #707070;
+
+  font-size: 0.84rem;
+
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .app-layout,
+  .hero-section {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-panel {
+    position: static;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    padding: 14px 4%;
+
+    min-height: auto;
+
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .download-btn,
+  .nav-create-btn {
+    padding: 9px 11px;
+
+    font-size: 0.75rem;
+  }
+
+  .app-layout,
+  .landing-main {
+    padding: 20px 4% 45px;
+  }
+
+  .form-panel {
+    padding: 20px;
+  }
+
+  .grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .resume-paper {
+    padding: 28px 20px;
+
+    font-size: 11px;
+  }
+
+  .resume-header h1 {
+    font-size: 21px;
+  }
+
+  .contact-line {
+    font-size: 9px;
+  }
+
+  .hero-buttons,
+  .cta-section {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .hero-primary-btn,
+  .hero-secondary-btn {
+    text-align: center;
+
+    width: 100%;
+  }
+
+  .cta-section {
+    padding: 30px 24px;
+
+    text-align: center;
+  }
+
+  .cta-section .hero-primary-btn {
+    width: 100%;
+  }
+
+  .preview-badge {
+    right: 10px;
+
+    bottom: 15px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    text-align: center;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .nav-actions {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .app-layout {
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+
+  .form-panel {
+    padding: 16px;
+  }
+
+  .preview-panel {
+    padding: 10px;
+  }
+
+  .resume-paper {
+    padding: 22px 16px;
+  }
+
+  .item-title-row {
+    gap: 8px;
+  }
+}
+
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+  body {
+    background: #ffffff !important;
+  }
+
+  .navbar,
+  .form-panel,
+  .preview-label,
+  .section-move-buttons {
+    display: none !important;
+  }
+
+  .app-layout {
+    display: block;
+
+    padding: 0;
+
+    margin: 0;
+  }
+
+  .preview-panel {
+    border: 0;
+
+    box-shadow: none;
+
+    padding: 0;
+
+    background: #ffffff;
+  }
+
+  .resume-paper {
+    box-shadow: none;
+
+    width: 100%;
+
+    color: #000000 !important;
+
+    border-radius: 0;
+  }
+}
+
+
+/* =========================================================
+   A4 PRINT PAGE
+   ========================================================= */
+
+@page {
+  size: A4;
+
+  margin: 10mm;
+}
+
+
+/* =========================================================
+   FINAL PRINT ADJUSTMENTS
+   ========================================================= */
+
+@media print {
+
+  html,
+  body {
+    width: 210mm;
+
+    height: 297mm;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    background: #ffffff !important;
+  }
+
+  .resume-paper {
+    width: 100% !important;
+
+    min-height: auto !important;
+
+    margin: 0 !important;
+
+    padding: 8mm 9mm !important;
+
+    box-shadow: none !important;
+
+    background: #ffffff !important;
+  }
+
+  .resume-paper,
+  .resume-paper * {
+    color: #000000 !important;
+  }
+}
