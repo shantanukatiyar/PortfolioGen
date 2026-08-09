@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PortfolioGen — Build Your Portfolio & Resume</title>
+  <link rel="stylesheet" href="builder.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="../index.html" class="logo">
+    PortfolioGen
+</a>
+    
+
+    <div class="nav-actions">
+      <button id="saveDraftBtn" class="nav-draft-btn" type="button">Save Draft</button>
+      <button id="clearDraftBtn" class="nav-clear-btn" type="button">Clear Draft</button>
+      <button id="downloadBtn" class="download-btn" type="button">Download Resume PDF</button>
+    </div>
+  </nav>
+
+  <main class="app-layout">
+    <section class="form-panel">
+      <div class="form-heading">
+        <p>RESUME BUILDER</p>
+        <h1>Create your resume</h1>
+        <span>Fill in your details. The preview updates automatically.</span>
+      </div>
+
+      
+      <section class="form-section">
+        <h2>Personal Details</h2>
+        <div class="grid">
+          <label class="full">Full Name<input type="text" id="fullName" placeholder="Your full name" /></label>
+          <label>Professional Title<input type="text" id="jobTitle" placeholder="Example: Aspiring Software Developer" /></label>
+          <label>Phone<input type="tel" id="phone" placeholder="+91 9876543210" /></label>
+          <label>Email<input type="email" id="email" placeholder="youremail@gmail.com" /></label>
+          <label>LinkedIn URL<input type="url" id="linkedin" placeholder="https://linkedin.com/in/username" /></label>
+          <label>GitHub URL<input type="url" id="github" placeholder="https://github.com/username" /></label>
+          <label>LeetCode URL<input type="url" id="leetcode" placeholder="https://leetcode.com/username" /></label>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Career Objective</h2>
+        <label>Objective<textarea id="objective" rows="4" placeholder="Write a short career objective..."></textarea></label>
+      </section>
+
+      <section class="form-section">
+        <h2>Education</h2>
+        <div id="educationContainer"></div>
+        <button type="button" id="addEducationBtn" class="add-btn">+ Add Education</button>
+      </section>
+
+      <section class="form-section">
+        <h2>Technical Skills</h2>
+        <label>Languages<input type="text" id="languages" placeholder="Example: C++, Python, JavaScript, SQL" /></label>
+        <label>Web Development<input type="text" id="webTech" placeholder="Example: HTML, CSS, JavaScript" /></label>
+        <label>Database<input type="text" id="database" placeholder="Example: MySQL, MongoDB" /></label>
+        <label>Tools & Platforms<input type="text" id="tools" placeholder="Example: Git, GitHub, VS Code" /></label>
+        <label>Core Concepts<input type="text" id="coreConcepts" placeholder="Example: DSA, OOP, DBMS, OS" /></label>
+        <label>Soft Skills<input type="text" id="softSkills" placeholder="Example: Problem Solving, Communication" /></label>
+      </section>
+
+      <section class="form-section">
+        <h2>Projects</h2>
+        <div id="projectsContainer"></div>
+        <button type="button" id="addProjectBtn" class="add-btn">+ Add Project</button>
+      </section>
+
+      <section class="form-section">
+        <h2>Experience</h2>
+        <div id="experienceContainer"></div>
+        <button type="button" id="addExperienceBtn" class="add-btn">+ Add Experience</button>
+      </section>
+
+      <section class="form-section">
+        <h2>Certifications & Achievements</h2>
+        <div id="certificationsContainer"></div>
+        <button type="button" id="addCertificationBtn" class="add-btn">+ Add Certification / Achievement</button>
+      </section>
+    </section>
+
+    <section class="preview-panel">
+      <p class="preview-label">LIVE PREVIEW</p>
+
+      <article class="resume-paper" id="resumePaper">
+        <header class="resume-header">
+          <h1 id="previewName">YOUR NAME</h1>
+          <p id="previewTitle">Your Professional Title</p>
+
+          <div class="contact-line">
+            <span id="previewPhone">Phone Number</span>
+            <span id="previewEmail">Email Address</span>
+            <a id="previewLinkedin" href="#" target="_blank">LinkedIn</a>
+            <a id="previewGithub" href="#" target="_blank">GitHub</a>
+            <a id="previewLeetcode" href="#" target="_blank">LeetCode</a>
+          </div>
+        </header>
+
+        <div id="resumeSections">
+          <section class="resume-section draggable-section" data-section="objective">
+            <div class="section-heading-row">
+              <h2>CAREER OBJECTIVE</h2>
+              <div class="section-move-buttons">
+                <button type="button" class="move-up-btn">↑</button>
+                <button type="button" class="move-down-btn">↓</button>
+              </div>
+            </div>
+            <p id="previewObjective" class="empty-note">Your career objective will appear here.</p>
+          </section>
+
+          <section class="resume-section draggable-section" data-section="education">
+            <div class="section-heading-row">
+              <h2>EDUCATION</h2>
+              <div class="section-move-buttons">
+                <button type="button" class="move-up-btn">↑</button>
+                <button type="button" class="move-down-btn">↓</button>
+              </div>
+            </div>
+            <div id="previewEducation"><p class="empty-note">Add your education details.</p></div>
+          </section>
+
+          <section class="resume-section draggable-section" data-section="skills">
+            <div class="section-heading-row">
+              <h2>TECHNICAL SKILLS</h2>
+              <div class="section-move-buttons">
+                <button type="button" class="move-up-btn">↑</button>
+                <button type="button" class="move-down-btn">↓</button>
+              </div>
+            </div>
+            <div id="previewSkills"><p class="empty-note">Add your technical skills.</p></div>
+          </section>
+
+          <section class="resume-section draggable-section" data-section="projects">
+            <div class="section-heading-row">
+              <h2>PROJECTS</h2>
+              <div class="section-move-buttons">
+                <button type="button" class="move-up-btn">↑</button>
+                <button type="button" class="move-down-btn">↓</button>
+              </div>
+            </div>
+            <div id="previewProjects"><p class="empty-note">Add your projects.</p></div>
+          </section>
+
+          <section class="resume-section draggable-section" data-section="experience">
+            <div class="section-heading-row">
+              <h2>EXPERIENCE</h2>
+              <div class="section-move-buttons">
+                <button type="button" class="move-up-btn">↑</button>
+                <button type="button" class="move-down-btn">↓</button>
+              </div>
+            </div>
+            <div id="previewExperience"><p class="empty-note">Add your experience.</p></div>
+          </section>
+
+          <section class="resume-section draggable-section" data-section="certifications">
+            <div class="section-heading-row">
+              <h2>CERTIFICATIONS & ACHIEVEMENTS</h2>
+              <div class="section-move-buttons">
+                <button type="button" class="move-up-btn">↑</button>
+                <button type="button" class="move-down-btn">↓</button>
+              </div>
+            </div>
+            <div id="previewCertifications"><p class="empty-note">Add certifications or achievements.</p></div>
+          </section>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="builder.js"></script>
+</body>
+</html>

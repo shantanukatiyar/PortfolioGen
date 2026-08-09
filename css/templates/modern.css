@@ -1,0 +1,1228 @@
+
+/* =========================================================
+   PORTFOLIOGEN — MODERN TEMPLATE
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+.modern-template {
+
+    --modern-bg: #0a0a0a;
+    --modern-surface: #111111;
+    --modern-surface-2: #171717;
+    --modern-text: #f5f5f5;
+    --modern-muted: #9b9b9b;
+    --modern-border: rgba(255, 255, 255, 0.10);
+    --modern-accent: #ffffff;
+
+    min-height: 100%;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(255,255,255,0.06),
+            transparent 30%
+        ),
+        var(--modern-bg);
+
+    color: var(--modern-text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.modern-template *,
+.modern-template *::before,
+.modern-template *::after {
+
+    box-sizing: border-box;
+
+}
+
+
+.modern-template a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+.modern-template p {
+
+    margin: 0;
+
+}
+
+
+.modern-template h1,
+.modern-template h2,
+.modern-template h3 {
+
+    margin: 0;
+
+    line-height: 1.1;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.modern-template .portfolio-nav {
+
+    width: min(
+        1100px,
+        calc(100% - 48px)
+    );
+
+    margin: 0 auto;
+
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid var(--modern-border);
+
+}
+
+
+.modern-template .portfolio-logo {
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+
+}
+
+
+.modern-template .portfolio-nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.modern-template .portfolio-nav-links a {
+
+    color: var(--modern-muted);
+
+    font-size: 13px;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.modern-template .portfolio-nav-links a:hover {
+
+    color:
+        var(--modern-text);
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.modern-template .portfolio-hero {
+
+    width: min(
+        1100px,
+        calc(100% - 48px)
+    );
+
+    min-height: 620px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding:
+        80px 0;
+
+}
+
+
+.modern-template .hero-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+
+    color:
+        var(--modern-muted);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+}
+
+
+.modern-template .hero-eyebrow::before {
+
+    content: "";
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--modern-accent);
+
+}
+
+
+.modern-template .portfolio-hero h1 {
+
+    max-width: 850px;
+
+    font-size:
+        clamp(48px, 8vw, 96px);
+
+    font-weight: 700;
+
+    letter-spacing: -0.065em;
+
+}
+
+
+.modern-template .portfolio-hero h1 span {
+
+    display: block;
+
+    color:
+        var(--modern-muted);
+
+}
+
+
+.modern-template .hero-tagline {
+
+    max-width: 620px;
+
+    margin-top: 30px;
+
+    color:
+        var(--modern-muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+.modern-template .hero-location {
+
+    margin-top: 15px;
+
+    color:
+        var(--modern-muted);
+
+    font-size: 13px;
+
+}
+
+
+.modern-template .hero-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 38px;
+
+}
+
+
+.modern-template .primary-button,
+.modern-template .secondary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding:
+        0 22px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.modern-template .primary-button {
+
+    background:
+        var(--modern-text);
+
+    color:
+        var(--modern-bg);
+
+}
+
+
+.modern-template .primary-button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.modern-template .secondary-button {
+
+    border:
+        1px solid var(--modern-border);
+
+    color:
+        var(--modern-text);
+
+}
+
+
+.modern-template .secondary-button:hover {
+
+    background:
+        var(--modern-surface);
+
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.modern-template .portfolio-section {
+
+    width: min(
+        1100px,
+        calc(100% - 48px)
+    );
+
+    margin: 0 auto;
+
+    padding:
+        110px 0;
+
+    border-top:
+        1px solid var(--modern-border);
+
+}
+
+
+.modern-template .section-heading {
+
+    display: grid;
+
+    grid-template-columns:
+        60px 1fr;
+
+    align-items: start;
+
+    margin-bottom: 55px;
+
+}
+
+
+.modern-template .section-heading > span {
+
+    padding-top: 7px;
+
+    color:
+        var(--modern-muted);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.modern-template .section-heading h2 {
+
+    font-size:
+        clamp(32px, 5vw, 54px);
+
+    letter-spacing:
+        -0.045em;
+
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.modern-template .about-content {
+
+padding-left: 0px;
+}
+
+.modern-template .about-content p {
+
+max-width: 1400px;
+
+color:
+    #c5c5c5;
+
+font-size:
+    clamp(10px, 4vw, 20px);
+
+line-height: 1.55;
+
+letter-spacing:
+    -0.02em;
+
+}
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.modern-template .portfolio-skills {
+
+    padding-left: 60px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.modern-template .portfolio-skill {
+
+    padding:
+        10px 16px;
+
+    border:
+        1px solid var(--modern-border);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    color:
+        #d8d8d8;
+
+    font-size: 13px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+.modern-template .portfolio-skill:hover {
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border-color:
+        rgba(255,255,255,0.2);
+
+}
+
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
+.modern-template .portfolio-projects {
+
+    display: grid;
+
+    gap: 1px;
+
+    background:
+        var(--modern-border);
+
+    border:
+        1px solid var(--modern-border);
+
+}
+
+
+.modern-template .portfolio-project {
+
+    display: grid;
+
+    grid-template-columns:
+        90px 1fr;
+
+    gap: 35px;
+
+    padding:
+        40px;
+
+    background:
+        var(--modern-bg);
+
+    transition:
+        background 0.2s ease;
+
+}
+
+
+.modern-template .portfolio-project:hover {
+
+    background:
+        var(--modern-surface);
+
+}
+
+
+.modern-template .project-number {
+
+    color:
+        var(--modern-muted);
+
+    font-size: 12px;
+
+    padding-top: 5px;
+
+}
+
+
+.modern-template .project-content h3 {
+
+    font-size: 28px;
+
+    letter-spacing:
+        -0.035em;
+
+}
+
+
+.modern-template .project-content p {
+
+    max-width: 650px;
+
+    margin-top: 14px;
+
+    color:
+        var(--modern-muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+.modern-template .project-tech {
+
+    margin-top: 20px;
+
+    color:
+        #d8d8d8;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.modern-template .project-content a {
+
+    display: inline-flex;
+
+    margin-top: 24px;
+
+    color:
+        var(--modern-text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.modern-template .project-content a:hover {
+
+    text-decoration:
+        underline;
+
+}
+
+
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
+
+.modern-template .portfolio-experience-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.modern-template .portfolio-experience {
+
+    display: grid;
+
+    grid-template-columns:
+        180px 1fr;
+
+    gap: 40px;
+
+    padding:
+        35px 0;
+
+    border-bottom:
+        1px solid var(--modern-border);
+
+}
+
+
+.modern-template .experience-period {
+
+    display: flex;
+
+    gap: 5px;
+
+    color:
+        var(--modern-muted);
+
+    font-size: 12px;
+
+}
+
+
+.modern-template .experience-content h3 {
+
+    font-size: 22px;
+
+    letter-spacing:
+        -0.025em;
+
+}
+
+
+.modern-template .experience-content strong {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color:
+        var(--modern-muted);
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+}
+
+
+.modern-template .experience-content p {
+
+    max-width: 680px;
+
+    margin-top: 15px;
+
+    color:
+        #b5b5b5;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   EDUCATION
+   ========================================================= */
+
+.modern-template .portfolio-education-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.modern-template .portfolio-education {
+
+    display: grid;
+
+    grid-template-columns:
+        180px 1fr;
+
+    gap: 40px;
+
+    padding:
+        30px 0;
+
+    border-bottom:
+        1px solid var(--modern-border);
+
+}
+
+
+.modern-template .education-period {
+
+    color:
+        var(--modern-muted);
+
+    font-size: 12px;
+
+}
+
+
+.modern-template .portfolio-education h3 {
+
+    font-size: 19px;
+
+}
+
+
+.modern-template .portfolio-education p {
+
+    margin-top: 7px;
+
+    color:
+        var(--modern-muted);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.modern-template .portfolio-contact {
+
+    width: min(
+        1100px,
+        calc(100% - 48px)
+    );
+
+    margin:
+        80px auto 0;
+
+    padding:
+        100px 0;
+
+    border-top:
+        1px solid var(--modern-border);
+
+}
+
+
+.modern-template .portfolio-contact > span {
+
+    color:
+        var(--modern-muted);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing:
+        0.16em;
+
+}
+
+
+.modern-template .portfolio-contact h2 {
+
+    max-width: 700px;
+
+    margin-top: 18px;
+
+    font-size:
+        clamp(38px, 6vw, 70px);
+
+    letter-spacing:
+        -0.055em;
+
+}
+
+
+.modern-template .portfolio-contact > p {
+
+    margin-top: 20px;
+
+    color:
+        var(--modern-muted);
+
+}
+
+
+.modern-template .portfolio-social-links {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+}
+
+
+.modern-template .portfolio-social-links a {
+
+    padding:
+        10px 17px;
+
+    border:
+        1px solid var(--modern-border);
+
+    border-radius: 999px;
+
+    color:
+        #d7d7d7;
+
+    font-size: 13px;
+
+}
+
+
+.modern-template .portfolio-social-links a:hover {
+
+    background:
+        var(--modern-surface);
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.modern-template .portfolio-footer {
+
+    width: min(
+        1100px,
+        calc(100% - 48px)
+    );
+
+    margin: 0 auto;
+
+    padding:
+        25px 0;
+
+    border-top:
+        1px solid var(--modern-border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color:
+        var(--modern-muted);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   EMPTY STATES
+   ========================================================= */
+
+.modern-template .portfolio-empty {
+
+    color:
+        var(--modern-muted);
+
+    font-size: 13px;
+
+}
+
+
+.modern-template .portfolio-empty-card {
+
+    padding:
+        35px;
+
+    border:
+        1px dashed
+        var(--modern-border);
+
+    color:
+        var(--modern-muted);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   MOBILE PREVIEW
+   ========================================================= */
+
+#portfolioPreview.mobile
+.modern-template .portfolio-nav,
+#portfolioPreview.mobile
+.modern-template .portfolio-hero,
+#portfolioPreview.mobile
+.modern-template .portfolio-section,
+#portfolioPreview.mobile
+.modern-template .portfolio-contact,
+#portfolioPreview.mobile
+.modern-template .portfolio-footer {
+
+    width:
+        calc(100% - 30px);
+
+}
+
+
+#portfolioPreview.mobile
+.modern-template .portfolio-nav-links {
+
+    display: none;
+
+}
+
+
+#portfolioPreview.mobile
+.modern-template .portfolio-hero {
+
+    min-height:
+        500px;
+
+    padding:
+        60px 0;
+
+}
+
+
+#portfolioPreview.mobile
+.modern-template .portfolio-hero h1 {
+
+    font-size:
+        48px;
+
+}
+
+
+#portfolioPreview.mobile
+.modern-template .hero-tagline {
+
+    font-size:
+        16px;
+
+}
+
+
+#portfolioPreview.mobile
+.modern-template .section-heading {
+
+    grid-template-columns:
+        40px 1fr;
+
+}
+
+
+#portfolioPreview.mobile
+.modern-template .about-content,
+#portfolioPreview.mobile
+.modern-template .portfolio-skills {
+
+    padding-left:
+        40px;
+
+}
+
+
+#portfolioPreview.mobile
+.modern-template .portfolio-project {
+
+    grid-template-columns:
+        1fr;
+
+    gap: 15px;
+
+    padding:
+        28px 22px;
+
+}
+
+
+#portfolioPreview.mobile
+.modern-template .portfolio-experience,
+#portfolioPreview.mobile
+.modern-template .portfolio-education {
+
+    grid-template-columns:
+        1fr;
+
+    gap: 10px;
+
+}
+
+
+#portfolioPreview.mobile
+.modern-template .portfolio-footer {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .modern-template .portfolio-nav {
+
+        width:
+            calc(100% - 30px);
+
+    }
+
+
+    .modern-template .portfolio-nav-links {
+
+        display: none;
+
+    }
+
+
+    .modern-template .portfolio-hero {
+
+        width:
+            calc(100% - 30px);
+
+        min-height:
+            520px;
+
+        padding:
+            60px 0;
+
+    }
+
+
+    .modern-template .portfolio-hero h1 {
+
+        font-size:
+            clamp(44px, 14vw, 64px);
+
+    }
+
+
+    .modern-template .hero-tagline {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .modern-template .hero-actions {
+
+        flex-direction: column;
+
+        align-items:
+            stretch;
+
+        width: 100%;
+
+    }
+
+
+    .modern-template .primary-button,
+    .modern-template .secondary-button {
+
+        width: 100%;
+
+    }
+
+
+    .modern-template .portfolio-section {
+
+        width:
+            calc(100% - 30px);
+
+        padding:
+            75px 0;
+
+    }
+
+
+    .modern-template .section-heading {
+
+        grid-template-columns:
+            40px 1fr;
+
+        margin-bottom:
+            35px;
+
+    }
+
+
+    .modern-template .section-heading h2 {
+
+        font-size:
+            36px;
+
+    }
+
+
+    .modern-template .about-content,
+    .modern-template .portfolio-skills {
+
+        padding-left:
+            40px;
+
+    }
+
+
+    .modern-template .about-content p {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .modern-template .portfolio-project {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            15px;
+
+        padding:
+            28px 22px;
+
+    }
+
+
+    .modern-template .portfolio-project .project-content h3 {
+
+        font-size:
+            23px;
+
+    }
+
+
+    .modern-template .portfolio-experience,
+    .modern-template .portfolio-education {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            10px;
+
+    }
+
+
+    .modern-template .portfolio-contact {
+
+        width:
+            calc(100% - 30px);
+
+        padding:
+            75px 0;
+
+    }
+
+
+    .modern-template .portfolio-footer {
+
+        width:
+            calc(100% - 30px);
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            8px;
+
+    }
+
+}
+

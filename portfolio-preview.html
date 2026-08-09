@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Portfolio Preview</title>
+
+    <link
+        rel="stylesheet"
+        href="css/templates/modern.css"
+        id="modernCSS"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/templates/aurora.css"
+        id="auroraCSS"
+        disabled
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/templates/skyline.css"
+        id="skylineCSS"
+        disabled
+    >
+
+    <style>
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #portfolioPreview {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="portfolioPreview"></div>
+
+
+    <!-- Renderer MUST load before the script below -->
+    <script src="js/templateRenderer.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                const saved =
+                    localStorage.getItem(
+                        "portfoliogenPreview"
+                    );
+
+
+                if (!saved) {
+
+                    document.getElementById(
+                        "portfolioPreview"
+                    ).innerHTML = `
+                        <div
+                            style="
+                                min-height:100vh;
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                font-family:Arial,sans-serif;
+                            "
+                        >
+                            <h2>
+                                No portfolio data found.
+                            </h2>
+                        </div>
+                    `;
+
+                    return;
+
+                }
+
+
+                let data;
+
+
+                try {
+
+                    data =
+                        JSON.parse(saved);
+
+                } catch (error) {
+
+                    console.error(
+                        "Could not read portfolio data:",
+                        error
+                    );
+
+                    return;
+
+                }
+
+
+                /* ==============================
+                   SELECT TEMPLATE CSS
+                   ============================== */
+
+                const modernCSS =
+                    document.getElementById(
+                        "modernCSS"
+                    );
+
+                const auroraCSS =
+                    document.getElementById(
+                        "auroraCSS"
+                    );
+
+                const skylineCSS =
+                    document.getElementById(
+                        "skylineCSS"
+                    );
+
+
+                modernCSS.disabled =
+                    data.template !== "modern";
+
+                auroraCSS.disabled =
+                    data.template !== "aurora";
+
+                skylineCSS.disabled =
+                    data.template !== "skyline";
+
+
+                /* ==============================
+                   RENDER PORTFOLIO
+                   ============================== */
+
+                if (
+                    typeof PortfolioRenderer ===
+                    "undefined"
+                ) {
+
+                    console.error(
+                        "PortfolioRenderer is not loaded."
+                    );
+
+                    return;
+
+                }
+
+
+                PortfolioRenderer.render(data);
+
+
+                /* ==============================
+                   APPLY TEMPLATE
+                   ============================== */
+
+                const preview =
+                    document.getElementById(
+                        "portfolioPreview"
+                    );
+
+
+                preview.dataset.template =
+                    data.template;
+
+
+                preview.classList.remove(
+                    "template-modern",
+                    "template-aurora",
+                    "template-skyline"
+                );
+
+
+                preview.classList.add(
+                    `template-${data.template}`
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
